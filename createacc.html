@@ -67,7 +67,7 @@
             </div>
 
             <!-- Create account form -->
-            <form class="signup-form">
+            <form class="signup-form" id="loginForm">
                 <!-- Email input -->
                 <input
                     type="email"
@@ -112,5 +112,14 @@
                 </p>
             </form>
         </div>
+        <script>
+            document
+                .getElementById("loginForm")
+                .addEventListener("submit", function (e) {
+                    e.preventDefault(); // Prevent default form submission (POST request)
+                    // Redirect to main.html
+                    window.location.href = "main.html";
+                });
+        </script>
     </body>
 </html>

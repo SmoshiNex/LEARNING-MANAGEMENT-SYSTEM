@@ -167,6 +167,10 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+.login-btn a {
+    color: white; /* Match the button's text color */
+    text-decoration: none; /* Remove the default underline */
+}
 
 .login-btn:hover {
     background-color: #083f08;

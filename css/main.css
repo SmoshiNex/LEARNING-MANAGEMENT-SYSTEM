@@ -1,0 +1,594 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+    color: #555;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.join-class-form h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-hint {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.requirements {
+    margin-bottom: 20px;
+}
+
+.requirements p {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.requirements ul {
+    padding-left: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.btn-cancel {
+    background-color: transparent;
+    color: #666;
+}
+
+.btn-join {
+    background-color: #0a5c36;
+    color: white;
+}
+
+/* Main Container Styles */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.logo h1 {
+    font-size: 20px;
+    color: #0a5c36;
+    font-weight: bold;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #0a5c36;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.user-info {
+    text-align: left;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.user-role {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    display: flex;
+    flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 180px;
+    background-color: #0c3a0c;
+    color: white;
+    padding: 20px 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar li {
+    margin-bottom: 5px;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover,
+.sidebar li.active a {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Dropdown */
+.dropdown-toggle {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu.show {
+    max-height: 500px;
+}
+
+.dropdown-menu a {
+    padding-left: 40px;
+}
+
+.fa-chevron-down {
+    transition: transform 0.3s;
+}
+
+.dropdown-toggle.active .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.class-item i {
+    font-size: 10px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f0f0f0;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h2 {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 15px;
+    min-height: 200px;
+}
+
+/* Add Button */
+.add-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #f5f5f5;
+}
+
+/* Empty State */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    color: #666;
+    padding: 20px;
+}
+
+.empty-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #999;
+}
+
+.empty-hint {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* Class Card */
+.class-card {
+    background-color: #ffd95a; /* Yellow color shown in both images */
+    border-radius: 5px;
+    padding: 20px;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+    height: auto; /* Allow height to adapt to content */
+}
+
+.class-card-content {
+    position: relative;
+    z-index: 2;
+    width: 70%;
+}
+
+.class-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.class-code {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.class-instructor {
+    font-size: 14px;
+    color: #444;
+}
+
+/* Update the decoration to match the notebook/notes style from image 2 */
+.class-decoration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 0.9;
+    width: 30%;
+    height: 100%;
+    text-align: right;
+    background-image: url("../images/1.png"); /* Replace with your notes icon path */
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+}
+
+/* Remove this if you're using a background image instead */
+.class-decoration img {
+    height: 70px;
+    object-fit: contain;
+}
+
+/* Calendar */
+.calendar-container {
+    width: 100%;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calendar-nav-btn {
+    background: #0c3a0c;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ddd;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.calendar-nav-btn:hover {
+    background-color: rgba(10, 92, 54, 0.1);
+    color: black;
+}
+
+#currentMonth {
+    font-weight: bold;
+    font-size: 16px;
+    color: #0c3a0c;
+}
+
+.calendar {
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    color: #666;
+    font-size: 12px;
+    padding: 10px 0;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-day {
+    padding: 10px;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.calendar-day:nth-child(7n) {
+    border-right: none;
+}
+
+.calendar-day:hover {
+    background-color: #f0f0f0;
+}
+
+.calendar-day.other-month {
+    color: #ccc;
+    background-color: #f9f9f9;
+}
+
+.calendar-day.today {
+    background-color: #e6f7ff;
+    font-weight: bold;
+}
+
+.calendar-day.selected {
+    background-color: #d1e7dd;
+    border: 2px solid #198754;
+    color: #000;
+}
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+}
+
+.stat-card {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 24px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Task Items */
+.task-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-item {
+    display: flex;
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.task-icon {
+    margin-right: 15px;
+    color: #0a5c36;
+    font-size: 20px;
+    width: 24px;
+    height: 24px;
+    background-color: #e6f7ee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-icon i {
+    font-size: 14px;
+}
+
+.task-details {
+    flex: 1;
+}
+
+.task-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.task-class,
+.task-due {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+}
