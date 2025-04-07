@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Page title -->
+        <title>Set Password - CCS Learn</title>
+        <!-- Favicon for the browser tab -->
+        <link
+            rel="icon"
+            href="../images/ccs-logo.png"
+            type="image/x-icon/jpeg/png"
+        />
+        <!-- Link to the external CSS file -->
+        <link rel="stylesheet" href="../css/setpass.css" />
+    </head>
+    <body>
+        <!-- Left side with background image -->
+        <div class="background-container">
+            <!-- Background image is set in CSS -->
+        </div>
+
+        <!-- Right side with forgot password form -->
+        <div class="form-container">
+            <!-- Logo -->
+            <img src="../images/ccs-logo.png" alt="CCS Logo" class="logo" />
+
+            <!-- Main title -->
+            <div class="title">
+                <h1>Set Password</h1>
+            </div>
+
+            <!-- Description text -->
+            <div class="description">
+                <p>Please enter your new password below, then save changes.</p>
+            </div>
+
+            <!-- Forgot password form -->
+            <form class="forgot-form" id="forgotForm">
+                <!-- Email input -->
+                <input
+                    type="password"
+                    placeholder="New Password"
+                    required
+                    class="full-width"
+                />
+                <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    required
+                    class="full-width"
+                />
+
+                <!-- Divider line -->
+                <div class="divider"></div>
+                <div class="save-cancel-btn">
+                    <button type="submit" class="submit-btn">
+                        SAVE CHANGES
+                    </button>
+                    <button type="submit" class="cancel-btn">CANCEL</button>
+                </div>
+                <!-- Submit button -->
+            </form>
+        </div>
+    </body>
+
+    <script>
+    document
+        .getElementById("forgotForm")
+        .addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent default form submission (POST request)
+            // Redirect to main.html
+            window.location.href = "login.html";
+        });
+</script></script>
+</html>
