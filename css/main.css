@@ -416,6 +416,63 @@ input[type="text"] {
     object-fit: contain;
 }
 
+/* Make classes container scrollable */
+#classesContainer {
+    max-height: 300px; /* Adjust this value as needed */
+    overflow-y: auto;
+    padding-right: 5px; /* Add some padding for the scrollbar */
+}
+
+/* Custom scrollbar styling (optional) */
+#classesContainer::-webkit-scrollbar {
+    width: 6px;
+}
+
+#classesContainer::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#classesContainer::-webkit-scrollbar-thumb {
+    background: #0c3a0c;
+    border-radius: 10px;
+}
+
+#classesContainer::-webkit-scrollbar-thumb:hover {
+    background: #0a5c36;
+}
+
+/* Ensure the dashboard card maintains its height */
+.dashboard-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-body {
+    flex: 1;
+    overflow: hidden; /* Hide overflow so it doesn't affect layout */
+    position: relative;
+}
+
+/* Maintain fixed height for the dashboard grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: minmax(400px, auto) minmax(300px, auto);
+    gap: 20px;
+}
+
+/* Add these styles to ensure task list scrolls when needed */
+#taskContainer {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#taskItems {
+    padding-right: 5px;
+}
+
 /* Calendar */
 .calendar-container {
     width: 100%;
